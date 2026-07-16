@@ -65,7 +65,7 @@ mvn exec:java -Dexec.mainClass=com.example.patterns.creational.singleton.Singlet
 ## Project layout
 
 ```
-src/main/java/com/example/patterns/
+src/main/java/com/naviroq/patterns/
 ├── creational/
 │   └── singleton/        # 6 variants + demo + README explaining the trade-offs
 ├── structural/
