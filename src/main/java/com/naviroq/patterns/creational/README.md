@@ -286,6 +286,78 @@ Or revisit this pattern and challenge yourself:
 - How would you handle serialization in a Singleton?
 - What about reflection attacks on the private constructor?
 
+## 🛡️ Vulnerabilities & Defenses
+
+Singletons are not inherently secure. They can be broken by:
+
+| Attack | How it breaks | Defense |
+| :--- | :--- | :--- |
+| **Reflection** | Bypasses `private` constructor via `setAccessible(true)`. | Throw `RuntimeException` in constructor if instance exists. |
+| **Serialization** | Creates a new object during deserialization. | Implement `readResolve()` to return the existing instance. |
+| **Cloning** | Creates a field-by-field copy. | **Don't implement `Cloneable`.** Override and throw exception. |
+
+
+## Defense Mechanisms: Bulletproofing the Singleton
+
+Even with a private constructor and a solid `getInstance()` implementation, the JVM has several backdoors that bypass your Singleton logic entirely. A determined (or careless) piece of code can still create a second instance — unless you explicitly defend against it.
+
+
+Even with a private constructor and a solid `getInstance()` implementation, the JVM has several backdoors that bypass your Singleton logic entirely. A determined (or careless) piece of code can still create a second instance — unless you explicitly defend against it.
+
+| Attack | Bypasses `getInstance()`? | Affects Eager? | Affects Lazy? |
+| :--- | :--- | :--- | :--- |
+| **Reflection** | ✅ Yes | ✅ Yes | ✅ Yes |
+| **Serialization/Deserialization** | ✅ Yes | ✅ Yes | ✅ Yes |
+| **Cloning** | ✅ Yes | ✅ Yes | ✅ Yes |
+
+### 1. Reflection Attack (The Master Key)
+
+Reflection ignores the `private` keyword entirely. It calls `new AppConfigEager()` or `new AppConfigLazy()` directly through hidden JVM APIs, completely skipping `getInstance()`.
+
+**The Fix — guard inside the constructor:**
+
+```java
+private AppConfigEager() {
+    if (INSTANCE != null) {
+        throw new RuntimeException("Reflection attack blocked!");
+    }
+    // ... actual initialization
+}
+```
+
+### 2. Serialization / Deserialization (The Teleporter)
+
+Serialization never touches your constructor at all. It uses a JVM backdoor to rebuild an object straight from bytes — producing a brand-new copy regardless of whether the original was Eager or Lazy.
+
+**The Fix — `readResolve()`:**
+
+```java
+protected Object readResolve() {
+    return getInstance(); // Overwrites the deserialized copy with the real one.
+}
+```
+
+The JVM calls this method automatically right after rebuilding the object from bytes. We discard that byte-copy and hand back the real, existing instance instead.
+
+### 3. Cloning (The Copy Machine)
+
+`clone()` performs a field-by-field copy of an object and has no awareness of Singleton rules.
+
+**The Fix — override and block:**
+
+```java
+@Override
+protected Object clone() throws CloneNotSupportedException {
+    throw new CloneNotSupportedException("Cannot clone a Singleton!");
+}
+```
+
+Or simpler still: **don't implement `Cloneable`** in the first place. Since `Object.clone()` is `protected`, no outside code can call it unless you explicitly expose it via `Cloneable` — so leaving it unimplemented blocks the attack by default.
+
+### Key Insight
+
+None of these three attacks route through `getInstance()` — that's exactly what makes them dangerous. They exploit JVM-level backdoors (reflection APIs, the deserialization pipeline, `Object.clone()`) that exist *outside* your carefully designed accessor logic. A truly bulletproof Singleton has to defend at every entry point an object can be created from, not just the one you intended.
+
 ---
 
 ## License

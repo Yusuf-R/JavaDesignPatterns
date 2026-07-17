@@ -7,6 +7,10 @@ public class AppConfigLazySync {
 
     // 2. The Private Lock
     private AppConfigLazySync() {
+        // Defensive check against Reflection
+        if (instance != null) {
+            throw new RuntimeException("Reflection attack detected! Singleton instance already exists.");
+        }
         System.out.println("   [Sync Constructor] Starting to build object...");
         try {
             Thread.sleep(50); // Force threads to collide
@@ -29,5 +33,16 @@ public class AppConfigLazySync {
         }
 
         return instance;
+    }
+
+    protected Object readResolve() {
+        // Tell JVM: "Throw away the deserialized copy, return the REAL Singleton instead."
+        return getInstance();
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        // Protection against Clone attack -- Protects the SINGLETON RULE
+        throw new CloneNotSupportedException("Cannot clone a Singleton!");
     }
 }
