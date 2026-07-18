@@ -1,11 +1,11 @@
-package com.naviroq.patterns.creational.singleton;
+package com.naviroq.patterns.creational.singleton.demo;
 
 import com.naviroq.patterns.creational.singleton.eager.AppConfigEager;
 import com.naviroq.patterns.creational.singleton.lazy.AppConfigLazy;
 import com.naviroq.patterns.creational.singleton.lazydcl.AppConfigLazyDCL;
 import com.naviroq.patterns.creational.singleton.lazyfix.AppConfigLazySync;
 
-public class Main {
+public class SingletonDemo {
     public static void main(String[] args) {
 
         // --- Test Eager Singleton (Thread-safe by default) ---

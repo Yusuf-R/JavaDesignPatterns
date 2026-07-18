@@ -199,8 +199,8 @@ Only the first thread pays the locking cost. All subsequent threads bypass the l
 The `Main.java` class runs a complete validation suite:
 
 ```bash
-javac com/naviroq/patterns/creational/singleton/Main.java
-java com.naviroq.patterns.creational.singleton.Main
+javac com/naviroq/patterns/creational/singleton/SingletonDemo.java
+java com.naviroq.patterns.creational.singleton.demo.SingletonDemoletonDemo
 ```
 
 Expected Output:
