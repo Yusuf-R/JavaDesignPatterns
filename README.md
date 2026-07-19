@@ -41,8 +41,8 @@ mvn exec:java -Dexec.mainClass=com.example.patterns.creational.singleton.Singlet
 | Adapter | ✅ done |
 | Bridge | ✅ done |
 | Composite | ✅ done |
-| Decorator | ⬜ |
-| Facade | ⬜ |
+| Decorator | ✅ done |
+| Facade | ✅ done |
 | Flyweight | ⬜ |
 | Proxy | ⬜ |
 
