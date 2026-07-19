@@ -29,18 +29,18 @@ mvn exec:java -Dexec.mainClass=com.example.patterns.creational.singleton.Singlet
 | Pattern | Status |
 |---|---|
 | Singleton | ✅ done |
-| Factory Method | ⬜ next |
-| Builder | ⬜ |
-| Abstract Factory | ⬜ |
+| Factory Method | ✅ done |
+| Builder | ✅ done |
+| Abstract Factory | ✅ done |
 | Prototype | ⬜ |
 
 ### Structural — *how classes are composed*
 
 | Pattern | Status |
 |---|---|
-| Adapter | ⬜ |
-| Bridge | ⬜ |
-| Composite | ⬜ |
+| Adapter | ✅ done |
+| Bridge | ✅ done |
+| Composite | ✅ done |
 | Decorator | ⬜ |
 | Facade | ⬜ |
 | Flyweight | ⬜ |
