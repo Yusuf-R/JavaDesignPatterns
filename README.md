@@ -26,41 +26,41 @@ mvn exec:java -Dexec.mainClass=com.example.patterns.creational.singleton.Singlet
 
 ### Creational — *how objects are created*
 
-| Pattern | Status |
-|---|---|
-| Singleton | ✅ done |
-| Factory Method | ✅ done |
-| Builder | ✅ done |
+| Pattern          | Status  |
+|------------------|---------|
+| Singleton        | ✅ done |
+| Factory Method   | ✅ done |
+| Builder          | ✅ done |
 | Abstract Factory | ✅ done |
-| Prototype | ⬜ |
+| Prototype        | ✅ done |
 
 ### Structural — *how classes are composed*
 
-| Pattern | Status |
-|---|---|
-| Adapter | ✅ done |
-| Bridge | ✅ done |
-| Composite | ✅ done |
-| Decorator | ✅ done |
-| Facade | ✅ done |
-| Flyweight | ⬜ |
-| Proxy | ⬜ |
+| Pattern   | Status   |
+|-----------|----------|
+| Adapter   | ✅ done  |
+| Bridge    | ✅ done  |
+| Composite | ✅ done  |
+| Decorator | ✅ done  |
+| Facade    | ✅ done  |
+| Flyweight | ⬜       |
+| Proxy     | ✅ done  |
 
 ### Behavioral — *how objects interact*
 
-| Pattern | Status |
-|---|---|
-| Chain of Responsibility | ⬜ |
-| Command | ⬜ |
-| Interpreter | ⬜ |
-| Iterator | ⬜ |
-| Mediator | ⬜ |
-| Memento | ⬜ |
-| Observer | ⬜ |
-| State | ⬜ |
-| Strategy | ⬜ |
-| Template Method | ⬜ |
-| Visitor | ⬜ |
+| Pattern                 | Status |
+|-------------------------|--------|
+| Chain of Responsibility | ⬜     |
+| Command                 | ⬜     |
+| Interpreter             | ⬜     |
+| Iterator                | ⬜     |
+| Mediator                | ⬜     |
+| Memento                 | ⬜     |
+| Observer                | ⬜     |
+| State                   | ⬜     |
+| Strategy                | ⬜     |
+| Template Method         | ⬜     |
+| Visitor                 | ⬜     |
 
 ## Project layout
 
