@@ -25,10 +25,10 @@ public class PaymentSystemAdapter implements ModernPayment {
 
         boolean transact = legacyPaymentSystem.executeTransaction(accountNumber, amountInCents, currencyCode);
         if (!transact) {
-            throw new RuntimeException("LegacyPayment banking transaction failed");
+            throw new RuntimeException("LegacyPayment banking bankTransaction failed");
         }
 
-        System.out.println("[ADAPTER] LegacyPayment transaction completed successfully");
+        System.out.println("[ADAPTER] LegacyPayment bankTransaction completed successfully");
         System.out.println("[ADAPTER] ModernPayment checkout confirmed");
     }
 }
