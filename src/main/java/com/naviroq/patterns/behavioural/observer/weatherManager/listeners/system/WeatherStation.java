@@ -19,7 +19,7 @@ public class WeatherStation implements WeatherSystem {
         this.temperature = temperature;
         this.humidity = humidity;
         this.pressure = pressure;
-        System.out.println("\n[WeatherStation] 🌡️ New readings: " + temperature + "°C, "
+        System.out.println("\n[WeatherStation] 🌡️ NewState readings: " + temperature + "°C, "
                 + humidity + "%, " + pressure + " hPa");
          notifyObservers();
     }

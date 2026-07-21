@@ -46,7 +46,7 @@ public class DocumentRegistry {
         Document service = new Document();
         service.setTitle("Master Service Agreement");
         service.setDocumentType("SERVICE");
-        service.setJurisdiction("New York, USA");
+        service.setJurisdiction("NewState York, USA");
         service.setRequiresNotarization(true);
         service.setReviewCycleDays(60);
         service.addClause("Scope of Services");

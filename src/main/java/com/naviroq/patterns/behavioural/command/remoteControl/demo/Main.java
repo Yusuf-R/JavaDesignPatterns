@@ -66,7 +66,7 @@ public class Main {
 
         remote.showStatus();
 
-        // New branch: Leaving home
+        // NewState branch: Leaving home
         System.out.println("\n>>> NEW PLAN: LEAVING HOME <<<");
         remote.pressButton(new GarageOpen(garage));
         remote.pressButton(new GarageClose(garage));

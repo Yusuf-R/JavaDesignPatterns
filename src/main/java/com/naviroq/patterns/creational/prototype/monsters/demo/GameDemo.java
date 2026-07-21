@@ -87,7 +87,7 @@ public class GameDemo {
         goblinMaster.getStats().setHealth(999);
         System.out.println("\nAfter modifying the ORIGINAL Goblin prototype's HP to 999:");
         System.out.println("   Original Goblin Prototype HP: " + goblinMaster.getStats().getHealth());
-        System.out.println("   New Goblin Clone HP (spawned after modification): " + spawner.spawn("goblin").getStats().getHealth());
+        System.out.println("   NewState Goblin Clone HP (spawned after modification): " + spawner.spawn("goblin").getStats().getHealth());
 
         System.out.println("\n✅ The clone still has the original HP! (Because it copied the value, not the reference)");
         System.out.println("✅ The prototype and clones are completely isolated!");

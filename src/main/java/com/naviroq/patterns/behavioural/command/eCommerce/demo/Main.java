@@ -19,7 +19,7 @@ public class Main {
         boolean keepRunning = true;
 
         while (keepRunning) {
-            System.out.println("\n--- New Order ---");
+            System.out.println("\n--- NewState Order ---");
             System.out.print("Order ID: ");
             String orderId = scanner.nextLine();
             if (orderId.equalsIgnoreCase("exit")) {

@@ -145,7 +145,7 @@ public class RemoteControl {
     public void pressButton(Command command) {
         command.execute();
         undoStack.push(command);
-        redoStack.clear(); // New command clears redo (branching)
+        redoStack.clear(); // NewState command clears redo (branching)
     }
 
     public void pressUndo() {

@@ -21,7 +21,7 @@ public class RemoteControl {
         System.out.println("\n[REMOTE] Pressing: " + command.getDescription());
         command.execute();
         undoStack.push(command);
-        redoStack.clear();  // New command clears redo history (branching)
+        redoStack.clear();  // NewState command clears redo history (branching)
         System.out.println("[REMOTE] Command stored. Undoable: " + undoStack.size());
     }
 

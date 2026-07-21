@@ -13,7 +13,7 @@ public class Main {
 
         String title = "Quarterly Report Q3 2024";
         String content = "Sales increased by 15% compared to Q2.\n" +
-                "New customers: 450\n" +
+                "NewState customers: 450\n" +
                 "Revenue: $2.5M";
 
         // Generate HTML
