@@ -15,6 +15,6 @@ public class PostDirector {
     public void makeCorporatePreset(Post.Builder builder) {
         builder.setText("Official Announcement.")
                 .setLayout("LongForm")
-                .setMedia("PDF");
+                .setMedia("PDFDocument");
     }
 }
